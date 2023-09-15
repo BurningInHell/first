@@ -1,13 +1,25 @@
-meme_dict = {
-            "КРИНЖ": "Что-то очень странное или стыдное",
-            "ЛОЛ": "Что-то очень смешное",
-            "КИННИТЬ": "Ассоциировать себя с кем-то или подражать кому-то.",
-            "ФЛЭШБЭК": "Вопоминания."
-            }
-word = input("Введите непонятное слово (большими буквами!): ")
-if word in meme_dict.keys():
-    # Что делать, если слово нашлось?
-    print("Это словао означает", meme_dict[word])
-else:
-    # Что делать, если слово не нашлось?
-    print("Даже эта прога хз")
+import discord
+from discord.ext import commands
+
+intents = discord.Intents.default()
+intents.message_content = True
+
+bot = commands.Bot(command_prefix='$', intents=intents)
+
+@bot.event
+async def on_ready():
+    print(f'We have logged in as {bot.user}')
+
+@bot.command()
+async def hello(ctx):
+    await ctx.send(f'Привет! Я бот {bot.user}!')
+
+@bot.command()
+async def heh(ctx, count_heh = 5):
+    await ctx.send("he" * count_heh)
+@bot.event
+async def onmessage(self, message):
+    print(f'Message from {message.author}: {message.content}')
+intents = discord.Intents.default()
+intents.message_content = True
+bot.run("MTE0NzgyOTQ1Mzk5Nzc0ODIyNA.GGUnO_.jGiQPiAFa6edL2qhKnaj-aD0tObZOeCvgt7XIs")
