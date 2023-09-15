@@ -22,4 +22,4 @@ async def onmessage(self, message):
     print(f'Message from {message.author}: {message.content}')
 intents = discord.Intents.default()
 intents.message_content = True
-bot.run("MTE0NzgyOTQ1Mzk5Nzc0ODIyNA.GGUnO_.jGiQPiAFa6edL2qhKnaj-aD0tObZOeCvgt7XIs")
+bot.run("")
